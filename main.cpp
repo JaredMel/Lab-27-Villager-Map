@@ -117,7 +117,6 @@ void deleteVillager(map<string, tuple<int, string, string>> &villagerMap)
 void increaseFriendship(map<string, tuple<int, string, string>> &villagerMap)
 {
     string name;
-    int incr;
 
     cout << "Villager details:" << endl;
     for (auto villager : villagerMap)
@@ -132,11 +131,41 @@ void increaseFriendship(map<string, tuple<int, string, string>> &villagerMap)
     getline(cin, name);
     cin.ignore();
 
+    villagerMap[name]++;
+}
+
+void decreaseFriendship(map<string, tuple<int, string, string>> &villagerMap)
+{
+    string name;
+
+    cout << "Villager details:" << endl;
     for (auto villager : villagerMap)
     {
-        if (villager.first.compare(name))
-        {
-            villager.second.get<0>(t);
-        }
+        cout << villager.first << " [";
+        std::apply([](auto&&... args) {
+            ((cout << args << "]"<< endl), ...);
+        }, villager.second);
     }
+
+    cout << "Name of Villager: ";
+    getline(cin, name);
+    cin.ignore();
+
+    get<0>(villagerMap);
+}
+
+void searchVillager(map<string, tuple<int, string, string>> &villagerMap)
+{
+    string name;
+
+    cout << "Name of Villager: ";
+    getline(cin, name);
+    cin.ignore();
+
+    auto search = villagerMap.find(name);
+    if (search != villagerMap.end())
+    {
+        cout << "[" << search->second << "]" << endl;
+    }
+    
 }
