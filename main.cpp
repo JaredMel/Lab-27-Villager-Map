@@ -23,6 +23,18 @@ int main() {
     
     while (choice != 6)
     {
+        cout << "Villager details:" << endl;
+        for (auto villager : villagers)
+        {
+            cout << villager.first << " ";
+            for (auto it)
+            {
+                /* code */
+            }
+            
+        }
+        
+
         do
         {
             cout << "1. Add Villager" << endl;
@@ -33,48 +45,35 @@ int main() {
             cout << "6. Exit" << endl;
             cin >> choice;
         } while (choice < 1 || choice > 6);
+
         switch (choice)
         {
         case 1:
             addVillager(villagers);
             break;
         case 2:
-        deleteVillager(villagers);
-        break;
-    case 3:
-        increaseFriendship(villagers);
-        break;
-    case 4:
-        decreaseFriendship(villagers);
-        break;
-    case 5:
-        searchVillager(villagers);
-        break;
-    default:
-        break;
-    }
-    }
-    
-    switch (choice)
-    {
-    case 1:
-        addVillager(villagers);
-        break;
-    case 2:
-        deleteVillager(villagers);
-        break;
-    case 3:
-        increaseFriendship(villagers);
-        break;
-    case 4:
-        decreaseFriendship(villagers);
-        break;
-    case 5:
-        searchVillager(villagers);
-        break;
-    default:
-        break;
+            deleteVillager(villagers);
+            break;
+        case 3:
+            increaseFriendship(villagers);
+            break;
+        case 4:
+            decreaseFriendship(villagers);
+            break;
+        case 5:
+            searchVillager(villagers);
+            break;
+        case 6:
+            break;
+        default:
+            break;
+        }
     }
 
     return 0;
+}
+
+void addVillager(map<string, tuple<int, string, string>>& villagerMap)
+{
+
 }
