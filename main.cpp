@@ -26,15 +26,12 @@ int main() {
         cout << "Villager details:" << endl;
         for (auto villager : villagers)
         {
-            cout << villager.first << " ";
-            for (auto it)
-            {
-                /* code */
-            }
-            
+            cout << villager.first << " [";
+            std::apply([](auto&&... args) {
+                ((cout << args << "]"<< endl), ...);
+            }, villager.second);
         }
         
-
         do
         {
             cout << "1. Add Villager" << endl;
@@ -75,5 +72,14 @@ int main() {
 
 void addVillager(map<string, tuple<int, string, string>>& villagerMap)
 {
+    int friendshipLevel;
+    string species;
+    string catchphrase;
+    string name;
+
+    cout << "Villager name: ";
+    getline(cin, name);
+    cin.ignore();
+    cout << 
 
 }
