@@ -70,7 +70,7 @@ int main() {
     return 0;
 }
 
-void addVillager(map<string, tuple<int, string, string>>& villagerMap)
+void addVillager(map<string, tuple<int, string, string>> &villagerMap)
 {
     int friendshipLevel;
     string species;
@@ -80,6 +80,20 @@ void addVillager(map<string, tuple<int, string, string>>& villagerMap)
     cout << "Villager name: ";
     getline(cin, name);
     cin.ignore();
-    cout << 
+    cout << "Friendship level: ";
+    cin >> friendshipLevel;
+    cout << "Species: ";
+    getline(cin, species);
+    cin.ignore();
+    cout << "Catchphrase: ";
+    getline(cin, catchphrase);
+    cin.ignore();
 
+    villagerMap.insert({name, {friendshipLevel, species, catchphrase}});
+    cout << name << " added." << endl;
+}
+
+void deleteVillager(map<string, tuple<int, string, string>> &villagerMap)
+{
+    
 }
