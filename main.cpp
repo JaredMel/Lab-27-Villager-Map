@@ -132,10 +132,11 @@ void increaseFriendship(map<string, tuple<int, string, string>> &villagerMap)
     getline(cin, name);
     cin.ignore();
 
-    if (villagerMap[name]->.get<0>(t))
+    for (auto villager : villagerMap)
     {
-        /* code */
+        if (villager.first.compare(name))
+        {
+            villager.second.get<0>(t);
+        }
     }
-    
-
 }
